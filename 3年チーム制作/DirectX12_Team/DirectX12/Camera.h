@@ -15,6 +15,7 @@ public:
 	static void SetTarget(Vector3 target);
 	static void CameraMoveVector(Vector3 move);//‘S‚Ä“®‚­
 	static void CameraMoveEyeVector(Vector3 move);//‹“_ŒÅ’è
+
 	static void UpdateViewMatrix();
 
 	//ƒJƒƒ‰

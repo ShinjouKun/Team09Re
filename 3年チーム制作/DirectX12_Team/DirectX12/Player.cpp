@@ -1,6 +1,8 @@
 #include "Player.h"
 #include "Input.h"
 #include"Bullet.h"
+#include"Easing.h"
+
 
 Player::Player(Vector3 pos, Vector3 ang, ObjectManager * obj,std::shared_ptr<Model>m,std::shared_ptr<Sprite>s, std::shared_ptr<Model>bm)
 	:playerModel(m),hitSprite(s),bulletModel(bm)
@@ -16,7 +18,8 @@ Player::~Player()
 
 void Player::Shot()
 {
-	objM->Add(new Bullet(Vector3(position.x,position.y,position.z), Vector3(angle.x, angle.y, angle.z), objM, bulletModel));
+	objM->Add(new Bullet(Vector3(position.x,position.y,position.z),
+		Vector3(angle.x, angle.y, angle.z), objM, bulletModel));
 }
 
 void Player::Init()
@@ -30,11 +33,16 @@ void Player::Init()
 	hitSprite->SetSize(1, Vector2(1, 1));
 	angle.y = 0.0f;
 	SphereSize = 1.0f;
+	xtilt = 0;
+	targetX = 0.0f;
+	targetY = 0.0f;
+	mode = 0;
+	time = 0;
 }
 
 void Player::Update()
 {
-	TargetPos = Vector3(0.0f, 0.0f, position.z + 50.0f);//弾の飛ぶ先を注視
+	TargetPos = Vector3(targetX, targetY, position.z + 50.0f);//弾の飛ぶ先を注視
 	//キー押し処理
 	if (Input::KeyState(DIK_UP))
 	{
@@ -69,6 +77,78 @@ void Player::Update()
 	{
 		Shot();
 	}
+
+	/*　ゲームパッド　*/
+	//　左スティック()
+	
+	if (Input::pad_data.lX < 0) {
+
+		targetX -= 2.0f;
+		//camera->CameraMoveEyeVector({ -0.2f,0,0 });
+
+	}
+	if (Input::pad_data.lX > 0) {
+
+		targetX += 2.0f;
+
+		//camera->CameraMoveEyeVector({ +0.2f,0,0 });
+
+	}
+	if (Input::pad_data.lY < 0) {
+
+		targetY += 2.0f;
+		//camera->CameraMoveEyeVector({ 0,0.2f,0 });
+
+	}
+	if (Input::pad_data.lY > 0) {
+
+		targetY -= 2.0f;
+		//camera->CameraMoveEyeVector({ 0,-0.2f,0 });
+
+	}
+
+	//　右スティック
+	if (mode == 0)
+	{
+		if (Input::pad_data.lZ < 0) {
+			camera->CameraMoveEyeVector({ -0.2f,0,0 });
+
+		}
+		if (Input::pad_data.lZ > 0) {
+			camera->CameraMoveEyeVector({ 0.2f,0,0 });
+
+		}
+		if (Input::pad_data.lRz < 0) {
+			camera->CameraMoveEyeVector({ 0,0.2f,0 });
+
+		}
+		if (Input::pad_data.lRz > 0) {
+			camera->CameraMoveEyeVector({ 0,-0.2f,0 });
+
+		}
+
+	}
+	//　ショット
+	if (Input::PushButton(BUTTON_A)) {
+		Shot();
+	}
+
+
+	if (Input::PushButton(BUTTON_Y)) {
+		
+		if (time < 20)time++;
+		camera->eye.z = Easing::ease_out_expo(time,
+			camera->eye.z,-95.0f - camera->eye.z,200);
+		camera->up.y = 0.5f;
+		mode = 1;
+	}
+	else
+	{
+		camera->eye.z = -100.0f;
+		camera->up.y = 1.0f;
+		mode = 0;
+	}
+
 }
 
 void Player::Rend()
@@ -85,4 +165,16 @@ void Player::Hit(BaseObject & other)
 	{
 		
 	}
+}
+
+void Player::WeaponChange()
+{
+	//　弾の切り替え
+	if (Input::TriggerButton(BUTTON_R1)) {
+
+	}
+	if (Input::TriggerButton(BUTTON_L1)) {
+
+	}
+
 }
