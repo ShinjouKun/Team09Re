@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Device">
+      <UniqueIdentifier>{47c73e87-936b-4495-b75b-fd868a4b8033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilty">
+      <UniqueIdentifier>{059b3460-26e8-4629-8c71-8ecc76fa8cae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Math">
+      <UniqueIdentifier>{cc98ce4d-27d3-4d5b-b5a9-ee3e6ddfc107}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Render">
+      <UniqueIdentifier>{25dce0d3-dadd-4435-bb1e-f6f177e80764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sound">
+      <UniqueIdentifier>{98597b11-c802-48f4-84ff-703c4943f1fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shader">
+      <UniqueIdentifier>{a1220a4c-ee35-4156-b04a-be20ec4c2a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Acter">
+      <UniqueIdentifier>{847a6cce-658d-417a-877a-6f8391bb2e2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{9f33663f-8045-4de0-840f-68069f2e13df}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectXManager.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix4.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>Device</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugText.cpp">
+      <Filter>Render</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseScene.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlay.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="SpritePixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="SpriteVertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="ModelVertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="ModelPixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="ParticleGeometryShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="ParticlePixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="ParticleVertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicVertexShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="BasicPixelShader.hlsl">
+      <Filter>Shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SpliteShaderHeader.hlsli">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="ModelShader.hlsli">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="ParticleShaderHeader.hlsli">
+      <Filter>Shader</Filter>
+    </None>
+    <None Include="BasicShader.hlsli">
+      <Filter>Shader</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DirectXManager.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="WCHAR_char.h">
+      <Filter>Utilty</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Input.h">
+      <Filter>Device</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugText.h">
+      <Filter>Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlay.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
