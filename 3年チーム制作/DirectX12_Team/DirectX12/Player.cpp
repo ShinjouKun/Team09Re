@@ -133,19 +133,27 @@ void Player::Update()
 		Shot();
 	}
 
-
+	
 	if (Input::PushButton(BUTTON_Y)) {
 		
 		if (time < 20)time++;
+		
 		camera->eye.z = Easing::ease_out_expo(time,
-			camera->eye.z,-95.0f - camera->eye.z,200);
-		camera->up.y = 0.5f;
+			camera->eye.z,-90.0f - camera->eye.z,200);
+		camera->eye.y = Easing::ease_out_expo(time,
+			camera->eye.y, -1.5f - camera->eye.y, 200);
+
 		mode = 1;
 	}
 	else
 	{
+		//if (time > 0)time--;
+
+		//camera->eye.z = Easing::ease_out_expo(time,
+		//	camera->eye.z, -100.0f - camera->eye.z, 200);
+
 		camera->eye.z = -100.0f;
-		camera->up.y = 1.0f;
+		camera->eye.y = 0.0f;
 		mode = 0;
 	}
 
