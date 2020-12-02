@@ -587,11 +587,8 @@ void Model::DrawModel(int num, const Vector3 & pos, const Vector3 & angle, const
 	d.ancAngle.z = angle.z;
 	d.ancAngle.x = angle.x;
 	d.ancAngle.y = angle.y;
-<<<<<<< HEAD
 	d.ancAngle.z = angle.z;
-=======
 	d.matWorld *= Matrix4::RotateZ(d.ancAngle.z);
->>>>>>> origin/ShinjouKun
 	d.matWorld *= Matrix4::RotateX(d.ancAngle.x);
 	d.matWorld *= Matrix4::RotateY(d.ancAngle.y);
 	d.matWorld *= Matrix4::RotateZ(d.ancAngle.z);

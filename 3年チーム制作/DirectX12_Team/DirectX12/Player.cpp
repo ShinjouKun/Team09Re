@@ -18,12 +18,9 @@ Player::~Player()
 
 void Player::Shot()
 {
-<<<<<<< HEAD
 	objM->Add(new Bullet(Vector3(position.x,position.y,position.z),
 		Vector3(angle.x, angle.y, angle.z), objM, bulletModel));
-=======
 	objM->Add(new Bullet(Vector3(position.x,position.y,position.z), Vector3(angle.x, angle.y, 0.0f), objM, bulletModel));
->>>>>>> origin/ShinjouKun
 }
 
 void Player::Init()
@@ -182,15 +179,12 @@ void Player::Update()
 
 void Player::Rend()
 {
-<<<<<<< HEAD
 	playerModel->DrawModel(2,(Vector3(position.x,position.y,position.z)), Vector3(angle.x,angle.y,angle.z),Vector3(1.0f,1.0f,1.0f));
 	//hitSprite->Draw3D(1, Vector3(0, 0, 0.0f), Vector3(0, 0, 0));
 	//camera->SetEye(Vector3(0, 0 , position.z - 10.0f));
-=======
 	playerModel->DrawModel(2, (Vector3(position.x, position.y - 2.0f, position.z)), Vector3(-angle.x, angle.y, 0.0f), Vector3(1.0f, 1.0f, 1.0f));
 	playerModel->DrawModel(5, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, angle.y, angle.z), Vector3(1.0f, 1.0f, 1.0f));
 	playerModel->DrawModel(6, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, 0.0f, angle.z), Vector3(1.0f, 1.0f, 1.0f));
->>>>>>> origin/ShinjouKun
 	camera->SetTarget(Vector3(TargetPos.x, TargetPos.y, TargetPos.z));
 }
 
