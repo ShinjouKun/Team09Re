@@ -33,6 +33,6 @@ void GamePlay::UpdateScene()
 void GamePlay::DrawScene()
 {
 	BaseScene::mModel->DrawModel(0, Vector3(0, 5.0f, -90.0f), Vector3(0, 0, 0),Vector3(1,1,1));//’n–Ê
-	//BaseScene::mModel->DrawModel(1, Vector3(0.0f, 5.0f, -90.0f), Vector3(0, 0, 0),Vector3(1,1,1));//“V‹…
+	BaseScene::mModel->DrawModel(1, Vector3(0.0f, 5.0f, -90.0f), Vector3(0, 0, 0),Vector3(1,1,1));//“V‹…
 	
 }

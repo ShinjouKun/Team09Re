@@ -77,9 +77,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//“Ç‚Ýž‚Ý
 	 model->LoadModel(L"Resouse/ground.obj", 0);
 	 model->LoadModel(L"Resouse/skydome.obj", 1);
-	model->LoadModel(L"Resouse/player.obj", 2);
+	model->LoadModel(L"Resouse/taihou.obj", 2);
 	model->LoadModel(L"Resouse/BoxTank.obj", 3);
 	model->LoadModel(L"Resouse/Bullet.obj", 4);
+	model->LoadModel(L"Resouse/yoko.obj", 5);
+	model->LoadModel(L"Resouse/daiza.obj", 6);
 	sprite->LoadTex(L"Resouse/TaimaPark.jpg");
 	sprite->CreateSpliteDate3D(L"Resouse/TaimaPark.jpg", 0, VertType::PLANE);
 	sprite->LoadTex(L"Resouse/carsoll.png");

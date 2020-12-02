@@ -25,10 +25,11 @@ void Player::Init()
 	death = false;
 	objType = ObjectType::PLAYER;
 	
-	playerModel->SetModelAncPoint(2, Vector3(0.0f, 0.5f, 1.85f),Vector3(0,angle.y,0));//‹°‚ç‚­^‚ñ’†
+	playerModel->SetModelAncPoint(2, Vector3(0.0f, -1.0f, 0.0f), Vector3(angle.x, angle.y, 0));//‹°‚ç‚­^‚ñ’†
 	
 	hitSprite->SetSize(1, Vector2(1, 1));
 	angle.y = 0.0f;
+	angle.x = 0.0f;
 	SphereSize = 1.0f;
 }
 
@@ -65,6 +66,14 @@ void Player::Update()
 	{
 		angle.y += 2.0f;
 	}
+	if (Input::KeyState(DIK_3))
+	{
+		angle.x -= 2.0f;
+	}
+	if (Input::KeyState(DIK_4))
+	{
+		angle.x += 2.0f;
+	}
 	if (Input::KeyState(DIK_SPACE))
 	{
 		Shot();
@@ -73,16 +82,13 @@ void Player::Update()
 
 void Player::Rend()
 {
-	playerModel->DrawModel(2,(Vector3(position.x,position.y,position.z)), Vector3(angle.x,angle.y,angle.z),Vector3(1.0f,1.0f,1.0f));
-	//hitSprite->Draw3D(1, Vector3(0, 0, 0.0f), Vector3(0, 0, 0));
-	//camera->SetEye(Vector3(position.x, position.y , position.z - 10.0f));
+	playerModel->DrawModel(2, (Vector3(position.x, position.y - 2.0f, position.z)), Vector3(angle.x, angle.y, 0.0f), Vector3(1.0f, 1.0f, 1.0f));
+	playerModel->DrawModel(5, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, angle.y, angle.z), Vector3(1.0f, 1.0f, 1.0f));
+	playerModel->DrawModel(6, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, 0.0f, angle.z), Vector3(1.0f, 1.0f, 1.0f));
 	camera->SetTarget(Vector3(TargetPos.x, TargetPos.y, TargetPos.z));
 }
 
 void Player::Hit(BaseObject & other)
 {
-	if (other.GetType() == ObjectType::ENEMY)
-	{
-		
-	}
+
 }

@@ -581,7 +581,7 @@ void Model::DrawModel(int num, const Vector3 & pos, const Vector3 & angle, const
 	d.texNum = num;//テクスチャを分けてます！！！！！！！！！
 	d.matWorld = Matrix4::Identity;
 	d.scale = size;
-	d.matWorld = Matrix4::createTranslation(-d.ancPoint3D);
+	d.matWorld = Matrix4::createTranslation(d.ancPoint3D);
 	
 	d.matWorld *= Matrix4::createScale(d.scale);
 	d.ancAngle.x = angle.x;
