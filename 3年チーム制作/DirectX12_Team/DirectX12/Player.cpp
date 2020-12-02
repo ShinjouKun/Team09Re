@@ -50,29 +50,29 @@ void Player::Update()
 
 	if (Input::KeyState(DIK_RIGHT))
 	{
-		position.x += 0.2f;
-		camera->CameraMoveEyeVector({ 0.2f,0,0 });
+		position.x += 0.4f;
+		camera->CameraMoveEyeVector({ 0.4f,0,0 });
 	}
 	if (Input::KeyState(DIK_LEFT))
 	{
-		position.x -= 0.2f;
-		camera->CameraMoveEyeVector({ -0.2f,0,0 });
+		position.x -= 0.4f;
+		camera->CameraMoveEyeVector({ -0.4f,0,0 });
 	}
 	if (Input::KeyState(DIK_1))
 	{
-		angle.y -= 2.0f;
+		angle.y -= 3.0f;
 	}
 	if (Input::KeyState(DIK_2))
 	{
-		angle.y += 2.0f;
+		angle.y += 3.0f;
 	}
 	if (Input::KeyState(DIK_3))
 	{
-		angle.x -= 4.0f;
+		angle.x -= 3.0f;
 	}
 	if (Input::KeyState(DIK_4))
 	{
-		angle.x += 4.0f;
+		angle.x += 3.0f;
 	}
 	if (Input::KeyState(DIK_SPACE))
 	{
