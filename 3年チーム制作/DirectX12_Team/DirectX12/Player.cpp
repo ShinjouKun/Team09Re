@@ -43,16 +43,19 @@ void Player::Init()
 void Player::Update()
 {
 	TargetPos = Vector3(targetX, targetY, position.z + 50.0f);//’e‚Ì”ò‚Ôæ‚ð’Ž‹
+
 	//ƒL[‰Ÿ‚µˆ—
 	if (Input::KeyState(DIK_UP))
 	{
-		position.y += 0.2f;
-		camera->CameraMoveEyeVector({0,0.2f,0});
+		position.z += 0.2f;
+		camera->CameraMoveEyeVector({0,0,0.2f});
+		
 	}
 	if (Input::KeyState(DIK_DOWN))
 	{
-		position.y -= 0.2f;
-		camera->CameraMoveEyeVector({ 0,-0.2f,0 });
+		position.z-= 0.2f;
+		camera->CameraMoveEyeVector({ 0,0,-0.2f});
+		
 	}
 
 	if (Input::KeyState(DIK_RIGHT))
@@ -138,10 +141,8 @@ void Player::Update()
 		
 		if (time < 20)time++;
 		
-		camera->eye.z = Easing::ease_out_expo(time,
-			camera->eye.z,-90.0f - camera->eye.z,200);
-		camera->eye.y = Easing::ease_out_expo(time,
-			camera->eye.y, -1.5f - camera->eye.y, 200);
+		camera->eye = Easing::ease_out_expo(time,
+			camera->eye,Vector3(0,camera->eye.y,camera->eye.z) - camera->eye,200);
 
 		mode = 1;
 	}
@@ -157,13 +158,19 @@ void Player::Update()
 		mode = 0;
 	}
 
+	/*if (time < 200)time++;
+	position = Easing::ease_out_expo(time, position,Vector3(0,4,-50.0f) - position, 300);
+
+	camera->eye = Easing::ease_out_expo(time, camera->eye, 
+		Vector3(0, 0, -50.0) - camera->eye, 300);
+*/
 }
 
 void Player::Rend()
 {
 	playerModel->DrawModel(2,(Vector3(position.x,position.y,position.z)), Vector3(angle.x,angle.y,angle.z),Vector3(1.0f,1.0f,1.0f));
 	//hitSprite->Draw3D(1, Vector3(0, 0, 0.0f), Vector3(0, 0, 0));
-	//camera->SetEye(Vector3(position.x, position.y , position.z - 10.0f));
+	//camera->SetEye(Vector3(0, 0 , position.z - 10.0f));
 	camera->SetTarget(Vector3(TargetPos.x, TargetPos.y, TargetPos.z));
 }
 
