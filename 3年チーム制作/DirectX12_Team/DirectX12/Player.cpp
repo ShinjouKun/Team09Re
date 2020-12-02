@@ -16,7 +16,7 @@ Player::~Player()
 
 void Player::Shot()
 {
-	objM->Add(new Bullet(Vector3(position.x,position.y,position.z), Vector3(angle.x, angle.y, angle.z), objM, bulletModel));
+	objM->Add(new Bullet(Vector3(position.x,position.y,position.z), Vector3(angle.x, angle.y, 0.0f), objM, bulletModel));
 }
 
 void Player::Init()
@@ -68,11 +68,11 @@ void Player::Update()
 	}
 	if (Input::KeyState(DIK_3))
 	{
-		angle.x -= 2.0f;
+		angle.x -= 4.0f;
 	}
 	if (Input::KeyState(DIK_4))
 	{
-		angle.x += 2.0f;
+		angle.x += 4.0f;
 	}
 	if (Input::KeyState(DIK_SPACE))
 	{
@@ -82,7 +82,7 @@ void Player::Update()
 
 void Player::Rend()
 {
-	playerModel->DrawModel(2, (Vector3(position.x, position.y - 2.0f, position.z)), Vector3(angle.x, angle.y, 0.0f), Vector3(1.0f, 1.0f, 1.0f));
+	playerModel->DrawModel(2, (Vector3(position.x, position.y - 2.0f, position.z)), Vector3(-angle.x, angle.y, 0.0f), Vector3(1.0f, 1.0f, 1.0f));
 	playerModel->DrawModel(5, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, angle.y, angle.z), Vector3(1.0f, 1.0f, 1.0f));
 	playerModel->DrawModel(6, (Vector3(position.x, position.y, position.z)), Vector3(0.0f, 0.0f, angle.z), Vector3(1.0f, 1.0f, 1.0f));
 	camera->SetTarget(Vector3(TargetPos.x, TargetPos.y, TargetPos.z));

@@ -29,7 +29,20 @@ bool BaseObject::BtoB_Col(BaseObject & other)
 
 Vector3 BaseObject::RotateX(float x)
 {
-	return Vector3();
+	Vector3 v;
+
+	x = x + 45.0f;
+	x = x * PI / 180.0f;
+
+	float sin = sinf(x);
+	float cos = cosf(x);
+
+	float y = -(sin)+cos;
+	float z = cos + sin;
+	
+
+	v = Vector3(0.0f, y, z);
+	return v;
 }
 
 Vector3 BaseObject::RotateY(float y)
