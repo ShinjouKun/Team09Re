@@ -140,9 +140,10 @@ void Player::Update()
 	if (Input::PushButton(BUTTON_Y)) {
 		
 		if (time < 20)time++;
-		
 		camera->eye = Easing::ease_out_expo(time,
-			camera->eye,Vector3(0,camera->eye.y,camera->eye.z) - camera->eye,200);
+			camera->eye, Vector3(0, 0, -95.0f) - camera->eye, 200);
+
+		
 
 		mode = 1;
 	}
