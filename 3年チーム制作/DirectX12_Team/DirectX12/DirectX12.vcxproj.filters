@@ -108,6 +108,12 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Acter</Filter>
     </ClCompile>
+    <ClCompile Include="Easing.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Track.cpp">
+      <Filter>Acter</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="SpritePixelShader.hlsl">
@@ -220,6 +226,12 @@
       <Filter>Scene</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
+      <Filter>Acter</Filter>
+    </ClInclude>
+    <ClInclude Include="Easing.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Track.h">
       <Filter>Acter</Filter>
     </ClInclude>
   </ItemGroup>

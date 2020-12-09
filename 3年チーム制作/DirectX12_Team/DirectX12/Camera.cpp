@@ -48,6 +48,7 @@ void Camera::CameraMoveEyeVector(Vector3 move)
 	SetEye(eyeMove);
 }
 
+
 void Camera::UpdateViewMatrix()
 {
 	matView = Matrix4::createLookAt(eye, target, up);

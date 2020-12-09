@@ -17,7 +17,8 @@ void Title::StartScene()
 
 void Title::UpdateScene()
 {
-	if (Input::KeyDown(DIK_SPACE))
+	if (Input::KeyDown(DIK_SPACE) ||
+		Input::TriggerButton(BUTTON_A))
 	{
 		NextScene(std::make_shared<GamePlay>());
 	}
