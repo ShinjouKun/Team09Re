@@ -16,10 +16,9 @@ void Enemy::Init()
 	position = Vector3(0.0f, 2.0f, -50.0f);
 	death = false;
 	objType = ObjectType::ENEMY;
-	enemyModel->SetModelAncPoint(3, Vector3(2.0f, 0.5f, 1.85f), Vector3(0, r, 0));//‹°‚ç‚­^‚ñ’†
+	enemyModel->SetModelAncPoint(3, Vector3(-0.3f, 0.5f, 1.85f), Vector3(0, r, 0));//‹°‚ç‚­^‚ñ’†
 	r = 0.0f;
 	SphereSize = 1.0f;
-	
 }
 
 void Enemy::Update()
@@ -29,7 +28,6 @@ void Enemy::Update()
 
 void Enemy::Rend()
 {
-
 	enemyModel->DrawModel(3, (Vector3(position.x, position.y, position.z)), Vector3(0, r, 0),Vector3(1,1,1));
 }
 

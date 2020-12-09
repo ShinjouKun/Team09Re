@@ -90,6 +90,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	
 	Input* input = new Input();//インプットインスタンス生成
 	input->Init(window->GetHWND());//インプット初期化
+	input->InitGamepad(window->GetHWND());
 	//シーン
 	mScene = std::make_unique<SceneManager>(sprite, model, paricle);
 		//ループ処理
@@ -106,6 +107,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 		//描画
 #pragma region キー入力
 		input->Update();//input
+		input->UpdateGamepad();
 		//キーここまで
 #pragma endregion
 		//シーン

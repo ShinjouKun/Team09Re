@@ -18,6 +18,11 @@ public:
 	virtual void Update() override;
 	virtual void Rend() override;
 	virtual void Hit(BaseObject & other) override;
+
+private:
+	void WeaponChange();
+
+
 private:
 	ObjectManager* objM;
 	std::shared_ptr<Model>playerModel;
@@ -26,4 +31,10 @@ private:
 	Camera* camera;
 	float r;
 	Vector3 TargetPos;
+
+
+	float xtilt;
+	float targetX, targetY;
+	int mode;
+	int time;
 };

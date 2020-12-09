@@ -587,9 +587,11 @@ void Model::DrawModel(int num, const Vector3 & pos, const Vector3 & angle, const
 	d.ancAngle.z = angle.z;
 	d.ancAngle.x = angle.x;
 	d.ancAngle.y = angle.y;
+	d.ancAngle.z = angle.z;
 	d.matWorld *= Matrix4::RotateZ(d.ancAngle.z);
 	d.matWorld *= Matrix4::RotateX(d.ancAngle.x);
 	d.matWorld *= Matrix4::RotateY(d.ancAngle.y);
+	d.matWorld *= Matrix4::RotateZ(d.ancAngle.z);
 	
 	d.matWorld *= Matrix4::createTranslation(Vector3(pos.x, -pos.y, pos.z));
 	
