@@ -75,8 +75,8 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	sound->LoadSE("Resouse/endingse.wav");
 	sound->Play("Resouse/endingse.wav");
 	//読み込み
-	 model->LoadModel(L"Resouse/ground.obj", 0);
-	 model->LoadModel(L"Resouse/skydome.obj", 1);
+	model->LoadModel(L"Resouse/ground.obj", 0);
+	model->LoadModel(L"Resouse/skydome.obj", 1);
 	model->LoadModel(L"Resouse/taihou.obj", 2);
 	model->LoadModel(L"Resouse/BoxTank.obj", 3);
 	model->LoadModel(L"Resouse/Bullet.obj", 4);
@@ -101,6 +101,11 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	
 	while (true)
 	{
+		if (input->KeyDown(DIK_ESCAPE))
+		{
+			return 0;
+		}
+
 
 		if (window->ProcesssMessage()) { break; }//メッセージ処理
 		dxManager->Begin();

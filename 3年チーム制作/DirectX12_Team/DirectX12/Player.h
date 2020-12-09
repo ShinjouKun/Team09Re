@@ -23,6 +23,7 @@ private:
 	void WeaponChange();
 
 
+
 private:
 	ObjectManager* objM;
 	std::shared_ptr<Model>playerModel;
@@ -32,9 +33,12 @@ private:
 	float r;
 	Vector3 TargetPos;
 
+	int _limitAngle;
 
 	float xtilt;
 	float targetX, targetY;
 	int mode;
 	int time;
+
+	int HP;
 };

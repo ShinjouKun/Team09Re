@@ -17,7 +17,10 @@ void Bullet::Init()
 	death = false;
 	objType = ObjectType::BULLET;
 	SphereSize = 2.0f;
-	BulletModel->SetModelAncPoint(4, Vector3(0.4f, 0.5f, 1.85f), Vector3(angle.x, angle.y, angle.z));//ã∞ÇÁÇ≠ê^ÇÒíÜ
+	BulletModel->SetModelAncPoint(4, Vector3(0.4f, 0.5f, 1.85f),
+		Vector3(angle.x, angle.y, angle.z));//ã∞ÇÁÇ≠ê^ÇÒíÜ
+
+
 }
 
 void Bullet::Update()
