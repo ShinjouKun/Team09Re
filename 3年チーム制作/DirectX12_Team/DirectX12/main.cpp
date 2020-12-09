@@ -94,15 +94,15 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 	//シーン
 	mScene = std::make_unique<SceneManager>(sprite, model, paricle);
 		//ループ処理
-	float x = 0;
-	float y = 2.0f;
-	float z = -90.0f;
-	float r = 180.0f;
+	//float x = 0;
+	//float y = 2.0f;
+	//float z = -90.0f;
+	//float r = 180.0f;
 	
 	while (true)
 	{
-		if (input->KeyDown(DIK_ESCAPE))
-		{
+		//　ESCキーで終了
+		if (input->KeyDown(DIK_ESCAPE)){
 			return 0;
 		}
 

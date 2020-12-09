@@ -8,7 +8,12 @@
 class Player :public BaseObject
 {
 public:
-	Player(Vector3 pos, Vector3 angle, ObjectManager* obj,std::shared_ptr<Model>m,std::shared_ptr<Sprite>s, std::shared_ptr<Model>bm);
+	Player(Vector3 pos,
+		Vector3 angle, 
+		ObjectManager* obj,
+		std::shared_ptr<Model>m,
+		std::shared_ptr<Sprite>s, 
+		std::shared_ptr<Model>bm);
 	~Player();
 
 	void Shot();
@@ -22,7 +27,7 @@ public:
 private:
 	void WeaponChange();
 
-
+	void LimetAngle(float limet);
 
 private:
 	ObjectManager* objM;
@@ -33,7 +38,7 @@ private:
 	float r;
 	Vector3 TargetPos;
 
-	int _limitAngle;
+	//int _limitAngle; //Å@å¿äEäp
 
 	float xtilt;
 	float targetX, targetY;

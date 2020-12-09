@@ -1,6 +1,6 @@
 #include "Track.h"
 
-Track::Track()	
+Track::Track(Vector3 pos)	
 {
 }
 
@@ -20,10 +20,9 @@ void Track::Updata()
 }
 
 void Track::AddTrackPoint(int tracknumber,
-	const Vector3& trackPos)
+	const Track& trackPos)
 {
 	_trackPoint->push_back(trackPos);
-
 
 }
 

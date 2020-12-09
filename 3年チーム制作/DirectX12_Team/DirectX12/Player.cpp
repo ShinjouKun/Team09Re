@@ -165,8 +165,8 @@ void Player::Update()
 	
 }
 
-	//if (time < 500)time++;
-	//position = Easing::ease_in_sine(time, position,Vector3(0,4,-50.0f) - position, 800);
+	if (time < 500)time++;
+	position = Easing::ease_in_sine(time, position,Vector3(0,4,-20.0f) - position, 1000);
 
 	TargetPos = Vector3(targetX, targetY, position.z + 50.0f);//’e‚Ì”ò‚Ôæ‚ð’Ž‹
 	camera->SetTarget(Vector3(TargetPos.x, TargetPos.y, TargetPos.z));
@@ -201,6 +201,15 @@ void Player::WeaponChange()
 	}
 	if (Input::TriggerButton(BUTTON_L1)) {
 
+	}
+
+}
+
+void Player::LimetAngle(float limet)
+{
+	if (angle.x > limet)
+	{
+		angle.x = limet;
 	}
 
 }

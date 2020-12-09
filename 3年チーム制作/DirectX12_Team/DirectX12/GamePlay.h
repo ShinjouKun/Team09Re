@@ -21,9 +21,15 @@ private:
 
 	virtual void DrawScene() override;
 
+
+
+
 	ObjectManager* objM;
 	Player* player;
 	Enemy* enemy;
 	Camera* camera;//FixMe sherdPtr‚É
 	float x, y, z;
+
+
+
 };

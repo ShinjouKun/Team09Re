@@ -157,6 +157,7 @@
     <ClCompile Include="DirectXManager.cpp" />
     <ClCompile Include="Easing.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyTraking_A.cpp" />
     <ClCompile Include="GamePlay.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="Matrix4.cpp" />
@@ -309,6 +310,7 @@
     <ClInclude Include="DirectXManager.h" />
     <ClInclude Include="Easing.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyTraking_A.h" />
     <ClInclude Include="GamePlay.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Matrix4.h" />

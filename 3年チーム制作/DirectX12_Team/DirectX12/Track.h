@@ -8,7 +8,7 @@ class Track
 {
 public:
 
-	Track();
+	Track(Vector3 pos);
 	~Track();
 
 	void Initilize();
@@ -17,7 +17,7 @@ public:
 
 	//　トラックポイントを増やす
 	void AddTrackPoint(int tracknumber,
-		const Vector3& trackPos);
+		const Track& trackPos);
 
 	Vector3 PointMove(Vector3& start,
 		Vector3& end,
@@ -45,7 +45,7 @@ private:
 	
 	//Vector3 _trackPointPos[];
 
-	std::vector<Vector3>*_trackPoint; //　トラックポイント格納
+	std::vector<Track>*_trackPoint; //　トラックポイント格納
 	std::map<int, std::vector<Track>> _track;
 
 	Vector3 position;

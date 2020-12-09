@@ -22,6 +22,9 @@ private:
 	virtual void Rend() override;
 
 	virtual void Hit(BaseObject & other) override;
+
+private:
+	
 	ObjectManager* objM;
 	std::shared_ptr<Model>BulletModel;
 	Vector3 TargetPos;

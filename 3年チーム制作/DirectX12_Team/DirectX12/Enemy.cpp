@@ -1,6 +1,10 @@
 #include "Enemy.h"
 
-Enemy::Enemy(Vector3 pos, Vector3 angle, ObjectManager * obj, std::shared_ptr<Model> m, std::shared_ptr<ParticleEmitter> p):
+Enemy::Enemy(Vector3 pos, 
+	Vector3 angle, 
+	ObjectManager * obj,
+	std::shared_ptr<Model> m,
+	std::shared_ptr<ParticleEmitter> p):
 	enemyModel(m),enemyP(p)
 {
 	position = pos;
@@ -37,5 +41,6 @@ void Enemy::Hit(BaseObject & other)
 	if (other.GetType() == ObjectType::BULLET)
 	{
 		enemyP->Update();
+		death = true;
 	}
 }
