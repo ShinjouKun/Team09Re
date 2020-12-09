@@ -1,0 +1,9 @@
+
+Trackフロー
+
+　移動系：プレイヤーの座標をstartpointからendpointまで移動、
+endpointについたらendpointをstartpointにして次のendpointに移動。
+
+
+
+
